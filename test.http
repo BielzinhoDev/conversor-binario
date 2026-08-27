@@ -1,0 +1,11 @@
+### Teste binário Válido
+GET http://localhost:3000/to-binary/25
+
+### Teste binário Inválido
+GET http://localhost:3000/to-binary/abc
+
+### Teste hexadecimal Válido
+GET http://localhost:3000/to-hex/37
+
+### Teste hexadecimal Inválido
+GET http://localhost:3000/to-hex/xyz
