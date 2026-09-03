@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Executando testes...'
-                sh 'npm test'
+                sh 'npx jest'
             }
         }
         stage('Deploy') {
