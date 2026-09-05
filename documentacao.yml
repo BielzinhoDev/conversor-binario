@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Conversor de Decimal para Binário/Hexadecimal API
+  version: 1.0.0
+  description: API que converte números decimais para binário e hexadecimal.
+servers:
+  - url: http://localhost:3000
+    description: Servidor local
+
+paths:
+  /to-binary/{decimal}:
+    get:
+      summary: Converter decimal para binário
+      parameters:
+        - name: decimal
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 10
+      responses:
+        '200':
+          description: Conversão bem-sucedida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  decimal:
+                    type: integer
+                  binary:
+                    type: string
+        '400':
+          description: Número inválido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /to-hex/{decimal}:
+    get:
+      summary: Converter decimal para hexadecimal
+      parameters:
+        - name: decimal
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 255
+      responses:
+        '200':
+          description: Conversão bem-sucedida
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  decimal:
+                    type: integer
+                  hexadecimal:
+                    type: string
+        '400':
+          description: Número inválido
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
